@@ -2,17 +2,17 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lspconfig = require('lspconfig')
-			lspconfig.lua_ls.setup{}
-			lspconfig.gopls.setup{}
-			lspconfig.golangci_lint_ls.setup{}
-			lspconfig.astro.setup{}
-			lspconfig.ts_ls.setup{}
-			lspconfig.pyright.setup{}
-			lspconfig.vuels.setup{}
-			lspconfig.phpactor.setup{}
-			lspconfig.bashls.setup{}
-			lspconfig.twiggy_language_server.setup{}
+			local lspconfig = require("lspconfig")
+			lspconfig.lua_ls.setup({})
+			lspconfig.gopls.setup({})
+			lspconfig.golangci_lint_ls.setup({})
+			lspconfig.astro.setup({})
+			lspconfig.ts_ls.setup({})
+			lspconfig.pyright.setup({})
+			lspconfig.vuels.setup({})
+			lspconfig.phpactor.setup({})
+			lspconfig.bashls.setup({})
+			lspconfig.twiggy_language_server.setup({})
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(ev)
@@ -31,14 +31,14 @@ return {
 					end, opts)
 				end,
 			})
-		end
+		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-				    "lua_ls",
+					"lua_ls",
 					"gopls",
 					"golangci_lint_ls",
 					"astro",
@@ -47,9 +47,9 @@ return {
 					"vuels",
 					"phpactor",
 					"bashls",
-					"twiggy_language_server"
+					"twiggy_language_server",
 				},
 			})
-		end
-	}
+		end,
+	},
 }
